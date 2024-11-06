@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe-store | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'customer/slider.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid bg-primary">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'images/Logo/company-logo.jpg' %}" width="70" height="50" class="rounded" />
+                </a>
+                <a class="navbar-brand text-warning" href="#">QuickFast</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'customer:home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'customer:about' %}">About Us</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cart</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Address</a></li>
+                                <li><a class="dropdown-item" href="#">Orders</a></li>
+                                <li><a class="dropdown-item" href="#">Wishlist</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form action="#" method="post">
+                                        {% csrf_token %}
+                                        <button type="submit" class="border border-0 text-center ms-3 ps-0 bg-light">Logout</button>
+                                      </form>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sign up</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+{% block banner-slider %}{% endblock %}
+{% block main-content %}{% endblock %}
+{% block content-one %}{% endblock %}
+{% block content-two %}{% endblock %}
+
+<br><br>    
+<div class="container m-auto p-auto">
+        <div class="row footer">
+            <div class="col">
+                <h3 class="text-start">Shopping Guide</h3>
+                <p class="text-dark">
+                    <li><a href="" style="text-decoration: none; color:#000;">How do I pay on Kilimall?</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">Flash Sale</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">How to apply aftersale/ Refund</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">how long does my order arrive?(Redirection)</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">How to shop on Kilimall</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">Forgot Passsword?</a></li>
+                </p>
+            </div>
+            <div class="col">
+                <h3 class="text-start">Customer Help Center</h3>
+                <p>
+                    <li><a href="" style="text-decoration: none; color:#000;">Dispute resolution policy</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">Terms and Conditions</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">Account Settings</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">After sale Policy</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">Delivery and Shipping</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">FAQ Center</a></li>
+                </p>
+            </div>
+            <div class="col">
+                <h3 class="text-start">Business</h3>
+                <p>
+                    <li><a href="" style="text-decoration: none; color:#000;">Want to be a Seller?</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">Seller Help Center</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">Quickfast shop</a></li>
+                </p>
+            </div>
+            <div class="col">
+                <h3 class="text-start">Quickfast International</h3>
+                <p>
+                    <li><a href="" style="text-decoration: none; color:#000;">Contact Us</a></li>
+                    <li><a href="" style="text-decoration: none; color:#000;">Kenya</a></li>
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+        <div class="row g-col-6 text-center">
+            <p><b>Stay Connected:</b> 
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </p>
+        </div>
+    <br>
+        <div class="row text-center">
+            <div class="columns grid gap-0 row-gap-3">
+                <a href="">
+                <img src="{% static 'images/Logo/mpesa.png' %}" alt="" width="100" class="g-col-6" height="50">
+                </a>
+                <a href="">
+                    <img src="{% static 'images/Logo/Airtel.png' %}" alt="" width="100" class="g-col-6" height="50">
+                </a>
+                <a href="">
+                    <img src="{% static 'images/Logo/KCB.png' %}" alt="" width="100" class="g-col-6" height="50">
+                </a>
+                <a href="">
+                    <img src="{% static 'images/Logo/Equity.png' %}" alt="" width="100" class="g-col-6" height="50">
+                </a>
+            </div>
+        </div>
+    <br><br>
+
+    <footer class="position-fixed bottom-0 text-center bg-primary w-100">
+            Copyright 2024 Quickfast, All rights reserved.
+    </footer>
+
+
+</body>
+</html>

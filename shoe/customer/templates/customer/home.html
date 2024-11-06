@@ -1,0 +1,349 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+
+{% block banner-slider %}
+<div class="container m-auto p-auto">
+    <div class="row">
+        <div class="column w-75">
+            <div id="carouselExampleAutoplaying carouselExampleDark" class="carousel slide carousel-dark img-slide" data-bs-ride="carousel">
+                <div class="carousel-inner carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="{% static 'images/Adidas/terrex.webp' %}" class="d-block w-100 object-fit-cover" width="200" height="400" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Adidas</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="{% static 'images/Bata/Comfit.png' %}" class="d-block w-100" width="200" height="400" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Bata</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="{% static 'images/Fila/Fila Fusion 50.webp' %}" class="d-block w-100 object-fit-cover" width="200" height="400" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5 class="text-success">Fila</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="{% static 'images/Nike/AirmaxDenim.webp' %}" class="d-block w-100 object-fit-cover" width="200" height="400" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Nike</h5>
+                    <p>Some representative placeholder content for the fourth slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="{% static 'images/Timberland/Timberland euro sprint hiker boot.jpg' %}" class="d-block w-100 object-fit-cover" width="200" height="400" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h5>Timberland</h5>
+                    <p>Some representative placeholder content for the fifth slide.</p>
+                    </div>
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="column w-25">
+            <div>
+                <h2>Category</h2>
+                <ul class="list-group">
+                    <a href="{% url 'customer:category' 'DD' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Adidas
+                      <span class="badge text-bg-primary rounded-pill">14</span>
+                    </li>
+                    </a>
+                    <a href="{% url 'customer:category' 'BA' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Bata
+                      <span class="badge text-bg-primary rounded-pill">2</span>
+                    </li>
+                    </a>
+                    <a href="{% url 'customer:category' 'CO' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Converse
+                      <span class="badge text-bg-primary rounded-pill">1</span>
+                    </li>
+                    </a>
+                    <a href="{% url 'customer:category' 'FI' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Fila
+                        <span class="badge text-bg-primary rounded-pill">5</span>
+                    </li>
+                    </a>
+                    <a href="{% url 'customer:category' 'NB' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    New Balance
+                    <span class="badge text-bg-primary rounded-pill">3</span>
+                    </li>
+                    </a>
+                    <a href="{% url 'customer:category' 'NI' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Nike
+                    <span class="badge text-bg-primary rounded-pill">17</span>
+                    </li>
+                    </a>
+                    <a href="{% url 'customer:category' 'PU' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Puma
+                    <span class="badge text-bg-primary rounded-pill">22</span>
+                    </li>
+                    </a>
+                    <a href="{% url 'customer:category' 'RB' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Reebok
+                    <span class="badge text-bg-primary rounded-pill">6</span>
+                    </li>
+                    </a>
+                    <a href="{% url 'customer:category' 'TL' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Timberland
+                    <span class="badge text-bg-primary rounded-pill">3</span>
+                    </li>
+                    </a>
+                    <a href="{% url 'customer:category' 'VA' %}" style="text-decoration: none;">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Vans
+                    <span class="badge text-bg-primary rounded-pill">13</span>
+                    </li>
+                    </a>
+                  </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block products %}{% endblock %}
+
+{% block main-content %}
+<div class="container">
+    <div class="row">
+        <h4><b>Our Products</b></h4>
+        {% for prod in product %}
+        <div class="col-sm-3 my-3">
+            <div class="border border-secondary border-2 rounded-2 h-100 d-inline-block text-center" style="width: 200px;">
+                <a href="{% url "customer:product-detail" prod.id %}" style="text-decoration: none; color:#000;">
+                <img src="{{prod.product_image.url}}" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                <p class="text-danger">{{prod.title}}</p>
+                <span style="color: red;"><b>Ksh {{prod.discounted_price}}</b></span>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <div class="row mt-3">
+        <h4><b>Flash sale</b>  <small>Ends in </small></h4>
+        <div class="col-sm-2">
+            <div class="">
+                <a href="#" style="text-decoration: none; color:#000;">
+                <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                <p>Brief Description</p>
+                <span style="color: red;"><b>Ksh 1,000</b></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="">
+                <a href="#" style="text-decoration: none; color:#000;">
+                <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                <p>Brief Description</p>
+                <span style="color: red;"><b>Ksh 1,000</b></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="">
+                <a href="#" style="text-decoration: none; color:#000;">
+                <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                <p>Brief Description</p>
+                <span style="color: red;"><b>Ksh 1,000</b></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="">
+                <a href="#" style="text-decoration: none; color:#000;">
+                <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                <p>Brief Description</p>
+                <span style="color: red;"><b>Ksh 1,000</b></span>
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="">
+                <a href="#" style="text-decoration: none; color:#000;">
+                <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                <p>Brief Description</p>
+                <span style="color: red;"><b>Ksh 1,000</b></span>
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row my-3">
+        <h4><b>Hot Category</b></h4>
+        <div class="d-flex flex-row mx-2">
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row my-3">
+        <h4><b>What's New</b></h4>
+        <div class="d-flex flex-row mx-2">
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <h4><b>What's New</b></h4>
+    {% for prodn in productNew %}
+    <div class="col-sm-3 my-3">
+        <div class="border border-secondary border-2 rounded-2 h-100 d-inline-block text-center" style="width: 200px;">
+            <a href="{% url "customer:product-detail" prodn.id %}" style="text-decoration: none; color:#000;">
+            <img src="{{prodn.product_image.url}}" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+            <p class="text-danger">{{prodn.title}}</p>
+            <span style="color: red;"><b>Ksh {{prodn.discounted_price}}</b></span>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+<div class="container">
+    <div class="row my-3">
+        <h4><b>You may also like</b></h4>
+        <div class="d-flex flex-row mx-2">
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+            <a href="#" style="text-decoration: none; color:#000;">
+                <div class="">
+                    <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                    <p>Brief Description</p>
+                    <span style="color: red;"><b>Ksh 1,000</b></span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<br><br>
+{% endblock %}

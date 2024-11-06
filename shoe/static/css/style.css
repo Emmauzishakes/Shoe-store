@@ -1,0 +1,13 @@
+
+.footer {
+    background-color: rgb(193, 185, 185);
+    font-size: 15px;
+    width: 100%;
+}
+.columns{
+    display: flex;
+    position: relative;
+    margin: auto;
+    padding: 2px;
+    text-decoration: none;
+}
