@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your models here.
 
@@ -41,3 +44,16 @@ class ProductNew(models.Model):
     def __str__(self):
         return self.title.title
     
+class Cart(models.Model):
+    title = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
+    cart_id = models.IntegerField(default=1)
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = ("Cart")
+        verbose_name_plural = ("Cart")
+        ordering = ("-id",)
+
+    def __str__(self):
+        return self.title.title

@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Shopping Cart{% endblock %}
+
+{% block main-content %}
+    <div class="container my-3">
+        <div class="row cart-item d-flex">
+            {% for prod in product %}
+                <!-- Checkbox -->
+                <div class="form-check align-items-start">
+                    <input type="checkbox" class="form-check-input" id="selectItem">
+                </div>
+
+                <!-- Store name -->
+                <div class="store-name mr-3">
+                    <i class="fas fa-store store-icon"></i> Leyan Life 
+                </div>
+
+                <!-- Product image -->
+                <img src="https://via.placeholder.com/80" alt="Product" class="img-thumbnail mr-3" style="width: 80px; height: 80px;">
+
+                <!-- Product details -->
+                <div class="product-info flex-grow-1">
+                    <p class="mb-1">{{prod.description}}</p>
+                    <small class="text-muted">Black-10PCS</small>
+                    <span class="discount-badge ml-2">Over KSh3000 Get 100 Off</span>
+                </div>
+
+                <!-- Quantity selector -->
+                <div class="quantity-control mr-3">
+                    <button class="btn btn-light">-</button>
+                    <input type="text" value="1" readonly>
+                    <button class="btn btn-light">+</button>
+                </div>
+
+                <!-- Price -->
+                <div class="price mr-3">
+                    KSh {{prod.discounted_price}}
+                </div>
+
+                <!-- Delete button -->
+                <button class="btn btn-link text-danger">Delete</button>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+{% block content-one %}
+    <div class="row">
+        <h4><b>What's New</b></h4>
+        {% for prodn in productNew %}
+        <div class="col-sm-3 my-3">
+            <div class="border border-secondary border-2 rounded-2 h-100 d-inline-block text-center" style="width: 200px;">
+                <a href="{% url "customer:product-detail" prodn.id %}" style="text-decoration: none; color:#000;">
+                <img src="{{prodn.product_image.url}}" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                <p class="text-danger">{{prodn.title}}</p>
+                <span style="color: red;"><b>Ksh {{prodn.discounted_price}}</b></span>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+    <div class="container">
+        <div class="row my-3">
+            <h4><b>You may also like</b></h4>
+            <div class="d-flex flex-row mx-2">
+                <a href="#" style="text-decoration: none; color:#000;">
+                    <div class="">
+                        <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                        <p>Brief Description</p>
+                        <span style="color: red;"><b>Ksh 1,000</b></span>
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none; color:#000;">
+                    <div class="">
+                        <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                        <p>Brief Description</p>
+                        <span style="color: red;"><b>Ksh 1,000</b></span>
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none; color:#000;">
+                    <div class="">
+                        <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                        <p>Brief Description</p>
+                        <span style="color: red;"><b>Ksh 1,000</b></span>
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none; color:#000;">
+                    <div class="">
+                        <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                        <p>Brief Description</p>
+                        <span style="color: red;"><b>Ksh 1,000</b></span>
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none; color:#000;">
+                    <div class="">
+                        <img src="" width="100" height="150" alt="" class="g-col-6 d-inline-block" style="width: 120px;">
+                        <p>Brief Description</p>
+                        <span style="color: red;"><b>Ksh 1,000</b></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+
+{% block main-content %}
+<div class="container">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3">
+            <h3>Login</h3>
+            <hr>
+            <form action="." method="post" autocomplete="off" class="shadow p-5">
+                {% csrf_token %}
+                {{form.as_p}}
+
+                <input type="submit" value="Login" class="btn-success btn py-8 px-4">
+                <small><a href="#">Forget Password?</a></small>
+                <br>
+                <div class="text-center text-primary fw-bold">
+                    <small>New User? <a href="{% url 'userauth:sign-up' %}">Create an Account</a></small>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
